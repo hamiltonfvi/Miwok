@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
+import android.media.MediaPlayer;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     /** Resource ID for the background color for this list of words */
     private int mColorResourceId;
+    private MediaPlayer mediaPlayer;
 
     public WordAdapter(Activity context, ArrayList<Word> words, int colorResourceId) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
@@ -35,7 +37,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         // Get the {@link AndroidFlavor} object located at this position in the list
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
@@ -69,6 +71,21 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
 
+        textContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSongTune());
+                mediaPlayer.start();
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSongTune());
+                mediaPlayer.start();
+            }
+        });
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

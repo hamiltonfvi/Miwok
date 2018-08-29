@@ -19,15 +19,21 @@ public class Word {
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     /**
+     * Resource id of the audio file
+     */
+    private int mSongTune;
+
+    /**
      * Create a new Word object.
      *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int songTune) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mSongTune = songTune;
     }
 
     /**
@@ -37,11 +43,13 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      * @param imageResourceId    is the drawable resource Id for the image asset
+     * @param songTune           is the resource id of the audio file
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int songTune) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mSongTune = songTune;
     }
 
     /**
@@ -64,6 +72,11 @@ public class Word {
     public int getImageResourceId() {
         return mImageResourceId;
     }
+
+    /**
+     * Get the Song's Tune.
+     */
+    public int getSongTune() { return mSongTune; }
 
     /**
      * Returns whether or not there is an image for this word.
