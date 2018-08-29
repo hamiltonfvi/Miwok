@@ -74,9 +74,23 @@ public class Word {
     }
 
     /**
-     * Get the Song's Tune.
+     * Get the audio resource id for the word.
      */
     public int getSongTune() { return mSongTune; }
+
+
+    /**
+     * Returns the string representation of the {@link Word} object.
+     */
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mSongTune=" + mSongTune +
+                '}';
+    }
 
     /**
      * Returns whether or not there is an image for this word.
