@@ -21,7 +21,7 @@ public class Word {
     /**
      * Resource id of the audio file
      */
-    private int mSongTune;
+    private int mAudioResourceId;
 
     /**
      * Create a new Word object.
@@ -30,10 +30,10 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation, int songTune) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        mSongTune = songTune;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -43,13 +43,13 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      * @param imageResourceId    is the drawable resource Id for the image asset
-     * @param songTune           is the resource id of the audio file
+     * @param audioResourceId          is the resource id of the audio file
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int songTune) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
-        mSongTune = songTune;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -76,21 +76,7 @@ public class Word {
     /**
      * Get the audio resource id for the word.
      */
-    public int getSongTune() { return mSongTune; }
-
-
-    /**
-     * Returns the string representation of the {@link Word} object.
-     */
-    @Override
-    public String toString() {
-        return "Word{" +
-                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
-                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
-                ", mImageResourceId=" + mImageResourceId +
-                ", mSongTune=" + mSongTune +
-                '}';
-    }
+    public int getAudioResourceId() { return mAudioResourceId; }
 
     /**
      * Returns whether or not there is an image for this word.
