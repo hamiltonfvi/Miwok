@@ -15,4 +15,6 @@
     <string name="category_family">Family Members</string>
 
     <string name="image">Icon Image</string>
+
+    <string name="play_button">Play Button</string>
 </resources>
